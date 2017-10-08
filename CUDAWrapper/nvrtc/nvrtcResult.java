@@ -1,0 +1,57 @@
+package CUDAWrapper.nvrtc;
+
+/**
+ * Return codes for the NVRTC API
+ */
+public class nvrtcResult
+{
+    public static final int NVRTC_SUCCESS = 0;
+    public static final int NVRTC_ERROR_OUT_OF_MEMORY = 1;
+    public static final int NVRTC_ERROR_PROGRAM_CREATION_FAILURE = 2;
+    public static final int NVRTC_ERROR_INVALID_INPUT = 3;
+    public static final int NVRTC_ERROR_INVALID_PROGRAM = 4;
+    public static final int NVRTC_ERROR_INVALID_OPTION = 5;
+    public static final int NVRTC_ERROR_COMPILATION = 6;
+    public static final int NVRTC_ERROR_BUILTIN_OPERATION_FAILURE = 7;
+    public static final int NVRTC_ERROR_NO_NAME_EXPRESSIONS_AFTER_COMPILATION = 8;
+    public static final int NVRTC_ERROR_NO_LOWERED_NAMES_BEFORE_COMPILATION = 9;
+    public static final int NVRTC_ERROR_NAME_EXPRESSION_NOT_VALID = 10;
+    public static final int NVRTC_ERROR_INTERNAL_ERROR = 11;
+    public static final int CUDAWrapper_INTERNAL_ERROR = 0x80000001;
+    
+    /**
+     * Returns the String identifying the given nvrtcResult
+     *
+     * @param result The nvrtcResult value
+     * @return The String identifying the given nvrtcResult
+     */
+    public static String stringFor(int result)
+    {
+        switch (result)
+        {
+            case NVRTC_SUCCESS                                     : return "NVRTC_SUCCESS";
+            case NVRTC_ERROR_OUT_OF_MEMORY                         : return "NVRTC_ERROR_OUT_OF_MEMORY";
+            case NVRTC_ERROR_PROGRAM_CREATION_FAILURE              : return "NVRTC_ERROR_PROGRAM_CREATION_FAILURE";
+            case NVRTC_ERROR_INVALID_INPUT                         : return "NVRTC_ERROR_INVALID_INPUT";
+            case NVRTC_ERROR_INVALID_PROGRAM                       : return "NVRTC_ERROR_INVALID_PROGRAM";
+            case NVRTC_ERROR_INVALID_OPTION                        : return "NVRTC_ERROR_INVALID_OPTION";
+            case NVRTC_ERROR_COMPILATION                           : return "NVRTC_ERROR_COMPILATION";
+            case NVRTC_ERROR_BUILTIN_OPERATION_FAILURE             : return "NVRTC_ERROR_BUILTIN_OPERATION_FAILURE";
+            case NVRTC_ERROR_NO_NAME_EXPRESSIONS_AFTER_COMPILATION : return "NVRTC_ERROR_NO_NAME_EXPRESSIONS_AFTER_COMPILATION";
+            case NVRTC_ERROR_NO_LOWERED_NAMES_BEFORE_COMPILATION   : return "NVRTC_ERROR_NO_LOWERED_NAMES_BEFORE_COMPILATION";
+            case NVRTC_ERROR_NAME_EXPRESSION_NOT_VALID             : return "NVRTC_ERROR_NAME_EXPRESSION_NOT_VALID";
+            case NVRTC_ERROR_INTERNAL_ERROR                        : return "NVRTC_ERROR_INTERNAL_ERROR";
+            case CUDAWrapper_INTERNAL_ERROR                              : return "CUDAWrapper_INTERNAL_ERROR";
+        }
+        return "INVALID nvrtcResult: "+result;
+    }
+    
+        
+    /**
+     * Private constructor to prevent instantiation.
+     */
+    private nvrtcResult()
+    {
+        // Private constructor to prevent instantiation.
+    }
+}
